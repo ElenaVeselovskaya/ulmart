@@ -33,21 +33,21 @@ public class Main {
         System.out.println("Product list filtered by name: ");
         listOfProductsByName.forEach(o -> System.out.println(o));
 
-        System.out.println("Product list filtered by name sorted by rating: ");
-        ulmartService.sortByRating(listOfProductsByName).forEach(o -> System.out.println(o));
+        System.out.println("Product list sorted by rating: ");
+        ulmartService.sortByRating().forEach(o -> System.out.println(o));
 
         System.out.println("Product list filtered by name per page: ");
-        ulmartService.productsPerPage(listOfProductsByName, 0, 4).forEach(o -> System.out.println(o));
+        ulmartService.productsPerPage(0, 4).forEach(o -> System.out.println(o));
 
         List<Product> listOfProductsByCategory = ulmartService.searchByCategory("toy");
         System.out.println("Product list filtered by category: ");
         listOfProductsByCategory.forEach(o -> System.out.println(o));
 
-        System.out.println("Product list filtered by category sorted by price: ");
-        ulmartService.sortByPrice(listOfProductsByCategory).forEach(o -> System.out.println(o));
+        System.out.println("Product list sorted by price: ");
+        ulmartService.sortByPrice().forEach(o -> System.out.println(o));
 
         System.out.println("Product list filtered by category per page: ");
-        ulmartService.productsPerPage(listOfProductsByCategory, 0, 4).forEach(o -> System.out.println(o));
+        ulmartService.productsPerPage(0, 4).forEach(o -> System.out.println(o));
 
         List<Product> listOfProductSortedByName = ulmartService.sortByName();
         System.out.println("Product list sorted by name: ");

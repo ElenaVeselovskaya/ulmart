@@ -44,17 +44,20 @@ public class UlmartService {
         return productsList;
     }
 
-    public List<Product> sortByRating(List<Product> productsList) {
+    public List<Product> sortByRating() {
+        List<Product> productsList = new ArrayList<>(products);
         Collections.sort(productsList, new ProductByRatingComparator());
         return productsList;
     }
 
-    public List<Product> sortByPrice(List<Product> productsList) {
+    public List<Product> sortByPrice() {
+        List<Product> productsList = new ArrayList<>(products);
         Collections.sort(productsList, new ProductByPriceComparator());
         return productsList;
     }
 
-    public List<Product> productsPerPage(List<Product> productsList, int fromIndex, int toIndex) {
+    public List<Product> productsPerPage(int fromIndex, int toIndex) {
+        List<Product> productsList = new ArrayList<>(products);
         if (productsList.size() > toIndex) {
             return productsList.subList(fromIndex, toIndex);
         }
